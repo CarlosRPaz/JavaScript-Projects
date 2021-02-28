@@ -1,34 +1,34 @@
 const quizData = [
     {
-        question: 'Inside which HTML element do we put the JavaScript?',
+        question: 'Inside which HTML element do we put the JavaScript? (a)',
         a: '<script>',
         b: '<js>',
         c: '<javascript>',
         d: '<scripting>',
         correct: 'a'
     }, {
-        question: 'JavaScript is a ____-side programming language.',
+        question: 'JavaScript is a ____-side programming language. (c)',
         a: 'Client',
         b: 'Server',
         c: 'Both',
         d: 'None',
         correct: 'c'
     }, {
-        question: 'Which of the following will write the message “Hello DataFlair!” in an alert box?',
+        question: 'Which of the following will write the message “Hello DataFlair!” in an alert box? (d)',
         a: 'alertBox(“Hello DataFlair!”);',
         b: 'alert(Hello DataFlair!);',
         c: 'msgAlert(“Hello DataFlair!”);',
         d: 'alert(“Hello DataFlair!”);',
         correct: 'd'
     }, {
-        question: 'How do you find the minimum of x and y using JavaScript?',
+        question: 'How do you find the minimum of x and y using JavaScript? (b)',
         a: 'min(x,y);',
         b: 'Math.min(x,y);',
         c: 'Math.min(xy);',
         d: 'min(xy);',
         correct: 'b'
     }, {
-        question: 'Which are the correct "if" statements to execute certain code if “x” is equal to 2?',
+        question: 'Which are the correct "if" statements to execute certain code if “x” is equal to 2? (c)',
         a: 'if(x 2)',
         b: 'if(x = 2)',
         c: 'if(x == 2)',
@@ -38,6 +38,7 @@ const quizData = [
 ]
 
 const answerEls = document.querySelectorAll(".answer");
+const quiz = document.getElementById("quiz");
 const questionEl = document.getElementById("question");
 const a_text = document.getElementById('a_text');
 const b_text = document.getElementById('b_text');
@@ -92,7 +93,7 @@ submitBtn.addEventListener("click", () => {
         if (currentQuestion < quizData.length) {
             loadQuiz();
         } else {
-            alert("Great job! You have completed the quiz.");
+            quiz.innerHTML = `<h2>You answered ${score}/${quizData.length} questions correctly.</h2> <button onClick="location.reload()">Reload</button>`;
         }
     }
 }) // 1:11:52
